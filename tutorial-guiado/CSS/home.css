@@ -1,0 +1,67 @@
+.header {
+    background-color: #6b37b7;
+}
+
+a {
+    color: #ffffff;
+    margin: 10px 10px 10px 10px;
+}
+
+    a:hover {
+        background-color: #0d6efd;
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2
+}
+
+button {
+    background-color: #008CBA !important;
+    border: none !important;
+    color: white !important;
+    padding: 2px 10px !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    font-size: 16px !important;
+    border-radius: .25rem !important;
+    transition: color .15s !important;
+}
+
+.revisado {
+    background-color: #0abc5f;
+    border: none !important;
+    color: white !important;
+    padding: 2px 10px !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    font-size: 16px !important;
+    border-radius: .25rem !important;
+    transition: color .15s !important;
+}
+
+.pendente {
+    background-color: #ff4040;
+    border: none !important;
+    color: white !important;
+    padding: 2px 10px !important;
+    text-align: center !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    font-size: 16px !important;
+    border-radius: .25rem !important;
+    transition: color .15s !important;
+}
