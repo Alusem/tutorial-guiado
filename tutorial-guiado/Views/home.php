@@ -1,7 +1,7 @@
 <?php
 	require '../PHP/conexao.php';
 	global $pdo;
-    session_start();
+  	session_start();
 ?>
 
 <!DOCTYPE html>
@@ -48,8 +48,8 @@
                     <th>Data de Cria&ccedil;&atilde;o</th>
                     <th>Status Texto</th>
                     <th>Status Passos</th>
-                    <th>Desenvolvimento</th>
                     <th>Produ&ccedil;&atilde;o</th>
+                    <th>Desenvolvimento</th>
                 </tr>   
            </form>
 
@@ -84,16 +84,16 @@
                             <?php if ($linhaF['revisaoPassos'] == "TRUE"){ echo '<div class=revisado>'.'Revisado'.'</div>' ;} else { echo '<div class=pendente>'.'Pendente'.'</div>';} ?>
                         </td>
                         <td>
-                            <?php if ($linhaF['ambienteDev'] == "TRUE"){ echo 'Sim' ;} else { echo 'N&atilde;o';} ?>
+                            <?php if ($linhaF['ambienteProd'] == "TRUE"){ echo 'Sim' ;} else { echo 'N&atilde;o';} ?>
                         </td>
                         <td>
-                            <?php if ($linhaF['ambienteProd'] == "TRUE"){ echo 'Sim' ;} else { echo 'N&atilde;o';} ?>
+                            <?php if ($linhaF['ambienteDev'] == "TRUE"){ echo 'Sim' ;} else { echo 'N&atilde;o';} ?>
                         </td>
                         <td>
                             <form action="editar-fluxo.php">
                                 <input type="hidden" name="idFluxos" value="<?php echo $linhaF['idFluxos'];?>">
                                 <div class="btn-editar-fluxos">  
-                                    <button class="input-botão">Editar Fluxo</button>
+                                    <button class="input-botÃ£o">Editar Fluxo</button>
                                 </div>
                             </form>
                         </td>
@@ -101,7 +101,7 @@
                             <form method="POST" action="../PHP/deletarF.php">
                                 <input type="hidden" name="idFluxos" value="<?php echo $linhaF['idFluxos'];?>">
                                 <div class="btn-deletar-fluxos">
-                                    <button class="input-botão" onclick="return confirm('Tem certeza que deseja deletar este fluxo?');">Deletar Fluxo</button>
+                                    <button class="input-botÃ£o" onclick="return confirm('Tem certeza que deseja deletar este fluxo?');">Deletar Fluxo</button>
                                 </div>
                             </form>
                         </td>
@@ -116,7 +116,7 @@
 
     <form action="cadastrar-fluxo.php">
         <div class="btn-cadastrar-fluxo">
-            <button class="input-botão">Cadastrar Fluxo</button>
+            <button class="input-botÃ£o">Cadastrar Fluxo</button>
         </div>
     </form>
 
@@ -136,8 +136,9 @@
                     <th>Data de Cria&ccedil;&atilde;o</th>
                     <th>Status Texto</th>
                     <th>Status Passos</th>
-                    <th>Desenvolvimento</th>
                     <th>Produ&ccedil;&atilde;o</th>
+                    <th>Desenvolvimento</th>
+                    
                 </tr>   
            </form>
  
@@ -152,7 +153,7 @@
                     $pesquisaM = "";
                 }
 
-                $consultaM = $pdo->query("SELECT idMenus, dataCriacao, nome, rotina, revisaoTexto, revisaoPassos, ambienteProd, ambienteDev FROM Menus WHERE nome LIKE '%". $pesquisaM ."%' OR rotina LIKE '%". $pesquisaM ."%' ");
+                $consultaM = $pdo->query("SELECT idMenus, dataCriacao, nome, rotina, revisaoTexto, revisaoPassos, ambienteProd, ambienteDev FROM menus WHERE nome LIKE '%". $pesquisaM ."%' OR rotina LIKE '%". $pesquisaM ."%' ");
 
                 while ($linhaM = $consultaM->fetch(PDO::FETCH_ASSOC)) {
                 ?>
@@ -173,16 +174,16 @@
                             <?php if ($linhaM['revisaoPassos'] == "TRUE"){ echo '<div class=revisado>'.'Revisado'.'</div>' ;} else { echo '<div class=pendente>'.'Pendente'.'</div>';} ?>
                         </td>
                         <td>
-                            <?php if ($linhaM['ambienteDev'] == "TRUE"){ echo 'Sim' ;} else { echo 'N&atilde;o';} ?>
+                            <?php if ($linhaM['ambienteProd'] == "TRUE"){ echo 'Sim' ;} else { echo 'N&atilde;o';} ?>
                         </td>
                         <td>
-                            <?php if ($linhaM['ambienteProd'] == "TRUE"){ echo 'Sim' ;} else { echo 'N&atilde;o';} ?>
+                            <?php if ($linhaM['ambienteDev'] == "TRUE"){ echo 'Sim' ;} else { echo 'N&atilde;o';} ?>
                         </td>
                         <td>
                             <form action="editar-menu.php">
                                 <input type="hidden" name="idMenus" value="<?php echo $linhaM['idMenus'];?>">
                                 <div class="btn-editar-menus">  
-                                    <button class="input-botão">Editar Menu</button>
+                                    <button class="input-botÃ£o">Editar Menu</button>
                                 </div>
                             </form>
                         </td>
@@ -190,7 +191,7 @@
                             <form method="POST" action="../PHP/deletarM.php">
                                 <input type="hidden" name="idMenus" value="<?php echo $linhaM['idMenus'];?>">
                                 <div class="btn-deletar-menus">
-                                    <button class="input-botão" onclick="return confirm('Tem certeza que deseja deletar este menu?');">Deletar Menu</button>
+                                    <button class="input-botÃ£o" onclick="return confirm('Tem certeza que deseja deletar este menu?');">Deletar Menu</button>
                                 </div>
                             </form>
                         </td>
@@ -206,7 +207,7 @@
 
     <form action="cadastrar-menu.php">
         <div class="btn-cadastrar-menu">
-            <button class="input-botão">Cadastrar Menu</button>
+            <button class="input-botÃ£o">Cadastrar Menu</button>
         </div>
     </form>
 
@@ -229,8 +230,8 @@
                     <th>Passos</th>
                     <th>Status Texto</th>
                     <th>Status Passos</th>
-                    <th>Desenvolvimento</th>
                     <th>Produ&ccedil;&atilde;o</th>
+                    <th>Desenvolvimento</th>
                 </tr>       
            </form>
 
@@ -245,7 +246,7 @@
                 }
 
         $consultaL = $pdo->query("SELECT idHistoricoAlteracoes, dataAlteracao, nome, rotina, usuario, texto, passos FROM historicoalteracoes WHERE nome LIKE '%". $pesquisaL ."%' OR rotina LIKE '%". $pesquisaL ."%' ");
-        $consultaR = $pdo->query("SELECT idRevisao, dataRevisao, nome, rotina, usuario, texto, passos, ambienteDev, ambienteProd FROM revisao WHERE nome LIKE '%". $pesquisaL ."%' OR rotina LIKE '%". $pesquisaL ."%' ");
+        $consultaR = $pdo->query("SELECT idRevisao, dataRevisao, nome, rotina, usuario, revisaoTexto, revisaoPassos, ambienteDev, ambienteProd FROM revisao WHERE nome LIKE '%". $pesquisaL ."%' OR rotina LIKE '%". $pesquisaL ."%' ");
 
         $contador = 0;
 
@@ -272,16 +273,16 @@
                             <?php if (strlen($linhaL['passos']) == 0) { echo '[Log sem altera&ccedil;&otilde;es]';} else { echo $linhaL['passos']; } ?>
                         </td>
                         <td>
-                            <?php if ($linhaR['texto'] == "TRUE"){ echo '<div class=revisado>'.'Revisado'.'</div>' ;} else { echo '<div class=pendente>'.'Pendente'.'</div>';} ?>
+                            <?php if ($linhaR['revisaoTexto'] == "TRUE"){ echo '<div class=revisado>'.'Revisado'.'</div>' ;} else { echo '<div class=pendente>'.'Pendente'.'</div>';} ?>
                         </td>
                         <td>
-                            <?php if ($linhaR['passos'] == "TRUE"){ echo '<div class=revisado>'.'Revisado'.'</div>' ;} else { echo '<div class=pendente>'.'Pendente'.'</div>';} ?>    
-                        </td>
-                        <td>
-                            <?php if ($linhaR['ambienteDev'] == "TRUE"){ echo 'Sim' ;} else { echo 'N&atilde;o';} ?>
+                            <?php if ($linhaR['revisaoPassos'] == "TRUE"){ echo '<div class=revisado>'.'Revisado'.'</div>' ;} else { echo '<div class=pendente>'.'Pendente'.'</div>';} ?>    
                         </td>
                         <td>
                             <?php if ($linhaR['ambienteProd'] == "TRUE"){ echo 'Sim' ;} else { echo 'N&atilde;o';} ?>
+                        </td>
+                        <td>
+                            <?php if ($linhaR['ambienteDev'] == "TRUE"){ echo 'Sim' ;} else { echo 'N&atilde;o';} ?>
                         </td>
                         <?php $contador = ($contador + 1) ?>
                     </tr>
@@ -296,7 +297,7 @@
         <form action="consultar-historico.php">
             <input type="hidden" name="idHistoricoAlteracoes" value="<?php echo $linhaL['idHistoricoAlteracoes'];?>">
                 <div class="btn-editar-fluxos">  
-                    <button class="input-botão">Consultar Hist&oacute;rico</button>
+                    <button class="input-botÃ£o">Consultar Hist&oacute;rico</button>
                 </div>
         </form>
 
