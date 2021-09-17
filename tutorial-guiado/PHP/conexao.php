@@ -1,8 +1,8 @@
 <?php
 
-$localhost = "127.0.0.1:3306";
-$user = "root";
-$passw = "password";
+$localhost = "db4free.net:3306";
+$user = "sam_adm";
+$passw = "pousada991";
 $banco = "tutorial-guiado";
 
 global $pdo;
